@@ -46,16 +46,6 @@ ssh-add -K ~/.ssh/id_rsa 2>/dev/null
 export XDEBUG_CONFIG="remote_enable=1 remote_mode=req remote_port=9001 remote_host=127.0.0.1 remote_connect_back=0"
 
 #################################################################
-### Docker
-#################################################################
-
-# import environment variables for the docker-cli
-#if docker-machine status default | grep "Running" &> /dev/null
-#  then
-#    eval "$(docker-machine env default)"
-#fi
-
-#################################################################
 ### NVM Autoloader Options
 #################################################################
 

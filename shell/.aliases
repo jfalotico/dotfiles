@@ -15,13 +15,6 @@ alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && kil
 # Show the lock screen
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
-### Navigation
-alias finder="open ."
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
-
 ### Network
 alias flushdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 
@@ -34,12 +27,10 @@ alias localip="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{
 #################################################################
 
 alias gst="git status"
-alias pop="git stash pop"
 alias switch="git checkout"
 alias pull="git pull origin"
 alias amend="git commit --amend"
 alias nah="git reset --hard HEAD"
-alias stash="git stash --include-untracked"
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 #################################################################
@@ -62,7 +53,6 @@ alias fresh="php artisan migrate:fresh --seed"
 # Share with ngrok
 alias share="valet share"
 
-
 #### Testing
 alias dusk="php artisan dusk"
 alias t="./vendor/bin/phpunit"
@@ -83,7 +73,7 @@ alias work="php artisan queue:work --tries=1"
 alias workers="php artisan horizon"
 alias stopWorkers="php artisan horizon:terminate"
 alias pauseWorkers="php artisan horizon:pause"
-alias continue="php artisan horizon:continue"
+alias continueWorkers="php artisan horizon:continue"
 
 #### Homestead
 alias vm="ssh vagrant@127.0.0.1 -p 2222"
@@ -98,13 +88,6 @@ alias routes="php artisan laroute:generate"
 
 
 #################################################################
-### Release IT - https://webpro.github.io/release-it
-#################################################################
-
-alias release="release-it"
-
-
-#################################################################
 ### Random
 #################################################################
 
@@ -113,9 +96,6 @@ alias fixfile="dos2unix"
 
 # Brew Helpers
 alias rmbrew="brew list | xargs brew rm"
-
-# Starts Minio Server
-alias s3="open http://127.0.0.1:9005; minio server --address :9005 /tmp/minio"
 
 # Fix Node Sass
 alias fixSass="npm rebuild node-sass"

@@ -53,8 +53,6 @@ brew install --with-homebrew-curl php71
 brew install php71-xdebug
 brew services start homebrew/php/php71
 brew install homebrew/php/php71-mcrypt
-brew install -s homebrew/php/php71-imagick
-brew install homebrew/php/php71-mongodb
 brew install homebrew/php/php71-intl
 brew install homebrew/php/php71-redis
 
@@ -70,10 +68,6 @@ echo 'move composer to /usr/local/bin/composer'
 mv -f composer.phar /usr/local/bin/composer
 
 ### Global Composer Packages
-
-echo 'install security checker'
-echo '---------------------'
-composer global require sensiolabs/security-checker
 
 echo 'install laravel valet'
 echo '---------------------'
@@ -98,15 +92,6 @@ brew install mysql
 brew services start mysql
 
 #################################################################
-### Mongo
-#################################################################
-
-echo 'install mongo'
-echo '---------------'
-brew install mongo
-brew services start mongodb
-
-#################################################################
 ### Node
 #################################################################
 
@@ -121,44 +106,6 @@ git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-
 echo 'install yarn'
 echo '------------'
 brew install yarn
-
-# install file watch (needed for watching phpunit tests)
-echo 'install onchange'
-echo '----------------'
-npm install -g onchange
-
-echo 'install bower'
-echo '------------'
-npm install -g bower
-
-echo 'install git-open'
-echo '------------'
-npm install -g git-open
-
-echo 'install release-it'
-echo '------------'
-npm install release-it -g
-
-#################################################################
-### Minio https://minio.io/
-#################################################################
-
-echo 'install minio'
-echo '------------'
-brew install minio/stable/minio
-mkdir /tmp/minio
-
-#################################################################
-### Docker
-#################################################################
-
-echo 'install docker'
-echo '------------'
-brew install docker docker-machine
-brew services start docker-machine
-
-# create the vm
-docker-machine create -d virtualbox dev
 
 #################################################################
 ### Random
